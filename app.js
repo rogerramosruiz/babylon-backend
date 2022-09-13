@@ -6,7 +6,6 @@ import cors from 'cors';
 import {fileURLToPath} from 'url';
 import path from 'path';
 
-import {default as getIp} from './modules/osProcess.js';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -46,7 +45,6 @@ app.get('/files', async (req, res)=>{
 
 
 app.listen(port, ()=>{
-    const ip = getIp();
-    console.log('Servidor corriendo en:\n', '\x1b[32m', `http://${ip}:${port}`, '\x1b[0m')
+    console.log('Servidor corriendo en:\n', '\x1b[32m', `${port}`, '\x1b[0m')
 })
 
